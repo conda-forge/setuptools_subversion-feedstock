@@ -13,12 +13,12 @@ source:
 
 build:
   skip: True  # [py36]
-  number: 1002
+  number: 1003
   script: python setup.py install --single-version-externally-managed --record record.txt
   preserve_egg_dir: True
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
 
