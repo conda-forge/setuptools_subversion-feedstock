@@ -12,18 +12,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py36]
-  number: 1004
-  script: python setup.py install --single-version-externally-managed --record record.txt
-  preserve_egg_dir: True
+  number: 1005
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
-    - setuptools
+    - python >=3.6
+    - pip
 
   run:
-    - python
+    - python >=3.6
     - setuptools
 
 test:
